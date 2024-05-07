@@ -1,0 +1,54 @@
+#msg {
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+    font-size: 20px;
+    display: none;
+}
+h1 {
+    text-align: center;
+}
+#container{
+    background-color:antiquewhite;
+    width: 35%;
+    padding: 20px;
+    border: 2px solid red;
+    margin: 0 auto;
+}
+#container ul{
+    list-style: none;
+}
+ul li {
+    border: 1px solid black;
+    padding: 10px;
+}
+li input[type = text] {
+    width: 250px;
+    height: 35px;
+}
+li input[type = password] {
+    width: 250px;
+    height: 35px;
+}
+#btn {
+    padding: 10px;
+    width: 90px;
+    background-color: aquamarine;
+    border: none;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.valid-list {
+    position: relative;
+    left: 1050px;
+    top: -236px;
+    color: red;
+    display: none;
+    border: 2px solid black;
+    width: 30%;
+}
+.set-color {
+    font-weight: bold;
+    color: green;
+}

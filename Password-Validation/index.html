@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+</head>
+<body>
+    <h1>User Registration page</h1>
+    <DIV id="container">
+    <ul>
+        <li>
+            <input type="text" placeholder="Enter Username" id="userId" onkeypress="validateSpace(event)" maxlength="10">
+            <div id="uName" style="display: none;">
+                User Name Required
+            </div>
+        </li>
+        <li>
+            <input type="password" placeholder="Enter Password" id="userPass" minlength="8" maxlength="8" onkeypress=" showrule(); return noSpace(event);" onkeyup="checkValidation(event)">
+            <div id="uPass" style="display: none;">
+                Password Required
+            </div>
+            <input type="checkbox" id="pwdshow" onchange="return ChangeType(event)"> Show Password
+        </li>
+        <li>
+            <input type="password" placeholder="Re-enter Password">
+            <div id="uRe-pass" style="display: none;">
+                User Name can't be empty
+            </div>
+        </li>
+        <li>
+            <input type="text" placeholder="Enter Mail id" id="userMailid">
+            <div id="uMail" style="display: none;">
+                Email id Required
+            </div>
+        </li>
+        <li>
+            <input type="button" value="Submit" onclick="RegisterUser()" id="btn">
+        </li>
+    </ul>
+</DIV>
+    <div id="msg">
+          Registration Successful ' Thankyou '
+    </div>
+    <div class="valid-list">
+        <ol>
+            <li id="validlength">max and min lenght of pwd is 8</li>
+            <li id="capital">password should only starts with UpperCase</li>
+            <li id="specialChar">password have atleast on special character ^#@&</li>
+            <li id="validNo">password sholud have atleast one numeric value</li>
+            <li id="spaceValid">should not contain space</li>
+        </ol>
+    </div>
+</body>
+</html>
