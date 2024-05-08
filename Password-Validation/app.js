@@ -63,6 +63,7 @@ var checkValidation = (event) => {
     else {
         document.querySelector("#validlength").removeAttribute("class");
     }
+    // console.log(event.target.value);
     // SPECIEAL CHARACTER VALIDATION:
     if (event.keyCode == 54 || event.keyCode == 51 || event.keyCode == 50 || event.keyCode == 55){
         cnt ++;
@@ -71,14 +72,14 @@ var checkValidation = (event) => {
       document.querySelector("#specialChar").setAttribute("class","set-color");  
     }
     else{
-        document.querySelector("#specialChar").removeAttribute.classList.remove("set-color");
+        document.querySelector("#specialChar").removeAttribute("class");
     }
     // var s = document.querySelector("#userPass").value;
     if(event.target.value.charCodeAt(0) >= 65 && event.target.value.charCodeAt(0) <=90 ){
         document.querySelector("#capital").setAttribute("class","set-color");
     }
     else {
-        document.querySelector("#capital").removeAttribute.classList.remove("set-color");
+        document.querySelector("#capital").removeAttribute("class")
     }
     
     // FOR AT LEAST ONE NUMBER :
@@ -88,8 +89,10 @@ var checkValidation = (event) => {
     // else {
     //     document.querySelector("#validNo").removeAttribute.classList.remove("set-color");
     // }
+
+    // FOR SPACE:
     if(event.keyCode == 32) {
-        document.querySelector("#spaceValid").removeAttribute.classList.remove("set-color");
+        document.querySelector("#spaceValid").removeAttribute("class");
     }
     else {
         document.querySelector("#spaceValid").setAttribute("class","set-color");
