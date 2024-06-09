@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../img/final.png" alt="">
+    </header>
+    <main>
+        <div class="content">
+            <h2>Create Account</h2>
+            <h5>Enter User Name </h5>
+            <input type="text" id="uName"class="input" placeholder="Enter a valid User name">
+            <span id="userName">User Name is Required!</span>
+            <h5>Enter Password </h5>
+            <input type="password" id="uPass" class="input" placeholder="Atleast 8 character password " onkeypress=" showrule()" onkeyup="checkValidation(event);" onkeyup="validatePassSpace(event)">
+            <span>
+                <input type="checkbox" id="showPass" onchange="return showPassword(event)"> Show Password
+            </span>
+           
+            <h5>confirm Password</h5>
+            <input type="password" id="uPass2" class="input">
+            <div id="pwdErr">
+                  <p>password does not match</p>
+            </div>
+            <h5>Enter Mobile Number</h5>
+            <input type="number" id="" min="1" max="12" id="uMobile" class="input" placeholder="enter 10 digit mobile number">
+            <h5>Enter Email ID</h5>
+            <input type="email" id="uMail" class="input" placeholder="Enter Email Address">
+            <span id="userMail">Email  is Mendatory</span>
+            <div id="submitBtn"> 
+                <button onclick="registerUser()" id="btnSubmit">Submit</button>
+            </div>
+        </div>
+        <div class="valid-list">
+            <ol>
+                <li id="validlength">max and min lenght of pwd is 8</li>
+                <li id="capital">password should only starts with UpperCase</li>
+                <li id="specialChar">password have atleast on special character ^#@&</li>
+                <li id="validNo">password sholud have atleast one numeric value</li>
+                <li id="spaceValid">should not contain space</li>
+            </ol>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        &#169; All right Reserved Shopify 2024
+    </footer>
+</body>
+
+</html>

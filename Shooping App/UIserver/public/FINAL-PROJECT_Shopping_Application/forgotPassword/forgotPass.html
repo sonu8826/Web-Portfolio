@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <img src="../img/final.png" alt="">
+    </header>
+    <main>
+        <div class="container">
+            <h2>Forgot Password</h2>
+            <p>Set the new Password for your Shopify Account</p>
+            <h5>Enter Email Id</h5>
+            <input type="email" placeholder="Enter valid Email" id="uMail">
+            <span id="eRequire">Email is Required </span>
+            <h5>Enter New Password</h5>
+            <input type="text" placeholder="Enter valid Email" id="uPass">
+            <h5>Confirm Password</h5>
+            <input type="text" placeholder="Enter valid Email" id="uPass2">
+            <div id="pwdErr">
+                <p>Password is not matching</p>
+            </div>
+            <div>
+                <button id="btn" onclick="registerUser()">Submit</button>
+            </div> 
+        </div>
+    </main>
+    <footer>
+        <hr>
+        &#169; All right Reserved Shopify 2024
+    </footer>
+</body>
+</html>

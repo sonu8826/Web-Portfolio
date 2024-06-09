@@ -1,0 +1,73 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: aliceblue;
+}
+.inner-container{
+    border: 2px solid gainsboro;
+    width: 20%;
+    padding: 5px 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+.main{
+    display: flex;
+    justify-content: center;
+ 
+}
+h1 {
+    text-align: center;
+}
+input[type=text]{
+    width: 100%;
+    height: 30px;
+}
+input[type=button]{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: yellow;
+    font-weight: bold;
+    margin-top: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+span {
+    margin-left: 37%;
+}
+#creatAc{
+    text-align: center;
+}
+#newAc{
+    text-decoration: none;
+    color: black;
+}
+button{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    /* border: 2px solid; */
+}
+img{
+    width: 10%;
+    height: 70px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px)  {
+    span {
+        margin-left: 30%;
+    }
+    .inner-container{
+        padding: 5px 15px;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="./jQuery.js"></script>
+  <script src="./jQueryBootstrap.js"></script>
+  <script src="app.js"></script>
+  <script src="../handelbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="../img/logoforHomePage.png" alt="" id="logo" class="headItem">
+    <input type="search" placeholder="Enter product name, brand" id="inpSearch" class="headItem">
+    <button id="btnSearch" class="headItem"><span class="bi bi-search"></span>Search</button>
+    <div id="right-content">
+        <i class="bi bi-list" id="menu"></i>  
+      <ol id="right-ol">
+        <li><a href="" style="text-decoration: none; color: white;">Login</a></li>
+        <li>Cart</li>
+        <li>Become Seller</li>
+      </ol>
+    </div>
+  </header>
+
+  <!-- CAROSEL SECTION : -->
+
+  <div class="carosel-container">
+    <div class="carousel slide carousel-dark mt-2" data-bs-ride="carousel" id="banner">
+      <div class="carousel-indicators">
+        <button data-bs-slide-to="0" data-bs-target="#banner" class="active"></button>
+        <button data-bs-slide-to="1" data-bs-target="#banner"></button>
+        <button data-bs-slide-to="2" data-bs-target="#banner"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./project-img/carosel-1.png" class="w-100 d-block" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="./project-img/carosel-2.png" class="w-100 d-block" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="./project-img/carosel-3.png" class="w-100 d-block" alt="">
+        </div>
+        <button class="carousel-control-prev bi bi-0-square" data-bs-target="#banner" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next bi bi-0-square" data-bs-target="#banner" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Main Section -->
+  <div class="main">
+    <div class="left">
+      <ol id="navOl">
+        <li><a href="#">Men wear</a></li>
+        <li><a href="#">Women wear</a></li>
+        <li><a href="#">Men Footwear</a></li>
+        <li><a href="#">Women Clog</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Men's watches</a></li>
+        <li><a href="#">Groceries Items</a></li>
+        <li><a href="#">Kids Section</a></li>
+        <li><a href="#">Home&Furniture</a></li>
+        <li><a href="#">Beauty</a></li>
+      </ol>
+    </div>
+    <div class="right"> 
+      <!-- <div id="inner-div">
+        <img src="./project-img/lower-2.jpeg" alt="LowerImg">
+        <h5>Addidas</h5>
+        <p>Lymio Men Regular Fit Track Pant || Regular Fit Track Pants</p>
+        <h5>&#8377; 800</h5>
+        <button class="btn btn-warning">Buy Now</button>
+        <button class="btn btn-outline-warning">Add to cart</button>
+      </div> -->
+      <!-- <div id="inner-div">
+        <img src="./project-img/lower-2.jpeg" alt="">
+        <h5>Addidas</h5>
+        <p>Lymio Men Regular Fit Track Pant || Regular Fit Track Pants</p>
+        <h5>&#8377; 800</h5>
+        <button class="btn btn-warning">Buy Now</button>
+        <button class="btn btn-outline-warning">Add to cart</button>
+      </div>
+      <div id="inner-div">
+        <img src="./project-img/lower-3.jpg" alt="">
+        <h5>HRX</h5>
+       <p>Lymio Men Regular Fit Track Pant || Regular Fit Track Pants</p>
+       <h5>&#8377; 700</h5>
+       <button class="btn btn-warning">Buy Now</button>
+       <button class="btn btn-outline-warning">Add to cart</button>
+      </div>
+      <div id="inner-div">
+        <img src="./project-img/tshirt-1.jpeg" alt="">
+        <h5>US. Polo</h5>
+       <p> Lymio Men Regular Fit T-Shirt || Regular Fit Track Shirt</p>
+       <h5>&#8377; 650</h5>
+       <button class="btn btn-warning">Buy Now</button>
+       <button class="btn btn-outline-warning">Add to cart</button>
+      </div>
+      <div id="inner-div">
+        <img src="./project-img/tshirt-2.webp" alt="">
+        <h5>Nike</h5>
+       <p> Lymio Men Regular Fit T-shirt || Regular Fit Track Shirt</p>
+       <h5>&#8377; 340</h5>
+       <button class="btn btn-warning">Buy Now</button>
+       <button class="btn btn-outline-warning">Add to cart</button>
+      </div>
+      <div id="inner-div">
+        <img src="./project-img/tshirt-3.jpeg" alt="">
+        <h5>HRX</h5>
+       <p> Lymio Men Regular Fit T-Shirt || Regular Fit Track Shirt</p>
+       <h5>&#8377; 500</h5>
+       <button class="btn btn-warning">Buy Now</button>
+       <button class="btn btn-outline-warning">Add to cart</button>
+      </div>  -->
+
+    </div>
+
+    <div id="dynamicCards" style="display: none;">
+      <div id="inner-div">
+        <img src="{{pImg}}" alt="Img">
+        <h5>{{pName}}</h5>
+        <p>{{pDesc}}</p>
+        <h5>{{pPrice}}</h5>
+        <button class="btn btn-warning buyNow">Buy Now</button>
+        <button class="btn btn-outline-warning">Add to cart</button>
+      </div>
+    </div>
+
+</body>
+
+</html>
