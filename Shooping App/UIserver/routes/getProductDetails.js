@@ -16,41 +16,41 @@ router.get('/', function(req, res, next) {
        },
        {
         pImg : "./project-img/lower-2.jpeg",
-        pName : "Nike",
-        pDesc : "Lymio Men Regular Fit Track Pant || Regular Fit Track Pants",
+        pName : "Polo",
+        pDesc : "Polo Men Regular Fit Track Pant || Regular Fit Track Pants",
         pPrice : "₹ 1,999.00",
         btn1 : "Buy Now",
         Btn2 : "Add to cart"
        },
        {
-        pImg : "./project-img/lower-2.jpeg",
-        pName : "Nike",
-        pDesc : "Lymio Men Regular Fit Track Pant || Regular Fit Track Pants",
-        pPrice : "₹ 1,999.00",
+        pImg : "./project-img/suit-1.webp",
+        pName : "Mangalam",
+        pDesc : "Womens regular Kurta set || for regular wearing ",
+        pPrice : "₹ 1,399.00",
         btn1 : "Buy Now",
         Btn2 : "Add to cart"
        },
        {
         pImg : "./project-img/tshirt-1.jpeg",
         pName : "Nike",
-        pDesc : "Lymio Men Regular Fit Track Pant || Regular Fit Track Pants",
-        pPrice : "₹ 1,999.00",
+        pDesc : "Nike Men Regular Fit T-Shirt || For regular Wearing ",
+        pPrice : "₹ 599.00",
         btn1 : "Buy Now",
         Btn2 : "Add to cart"
        },
        {
-        pImg : "./project-img/lower-2.jpeg",
-        pName : "Nike",
-        pDesc : "Lymio Men Regular Fit Track Pant || Regular Fit Track Pants",
-        pPrice : "₹ 1,999.00",
+        pImg : "./project-img/suit-2.jpg",
+        pName : "Manyawar",
+        pDesc : "All new womens Kurta set || To enhance your Look",
+        pPrice : "₹ 1,199.00",
         btn1 : "Buy Now",
         Btn2 : "Add to cart"
        },
        {
         pImg : "./project-img/tshirt-3.jpeg",
-        pName : "Nike",
-        pDesc : "Lymio Men Regular Fit Track Pant || Regular Fit Track Pants",
-        pPrice : "₹ 1,999.00",
+        pName : "Lacoster",
+        pDesc : "Lacoster Men Regular Over-Sized Tshirt || Regular Over-Sized Fits",
+        pPrice : "₹ 999.00",
         btn1 : "Buy Now",
         Btn2 : "Add to cart"
        }
