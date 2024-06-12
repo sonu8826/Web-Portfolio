@@ -59,3 +59,9 @@ header{
     display: none;
     color: red;
 }
+#checkMail{
+    font-weight: 400;
+    text-align: center;
+    color: green;
+    display: none;
+}
