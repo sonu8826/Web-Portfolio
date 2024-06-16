@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./images/fav-2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./library/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../"> -->
+    <script src="./library/handelbar.js"></script>
+    <script src="./library/axios.min.js"></script>
+    <script src="./library/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <script src="./javascripts/forgotPass.js"></script>
+    <script src="./javascripts/signUp.js"></script>
+    <script src="./javascripts/loginModal.js"></script>
+    <script src="./library/jQuery.js"></script>
+    <script src="./javascripts/index.js"></script>
+    <script src="./javascripts/loadProductDetails.js"></script>
+    
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" id="NavBar">
+                <img src="./images/logoforHomePage.png" alt="" id="iconImg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarMenuitems">
+                        <li class="nav-item" id="navItem">
+                            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+                        </li>
+                        <li class="nav-item" id="navItem">
+                            <a class="nav-link" href="#">Feature</a>
+                        </li>
+
+                        <li class="nav-item" id="navItem">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item" id="navItem">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning me-0" type="submit">Search</button>
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModel">Login</button>
+                        <button class="btn btn-outline-primary" type="button" data-bs-target="#SignUp"
+                            data-bs-toggle="modal">SignUp</button>
+                        <i class="bi bi-cart4"></i>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+    <!-- Login Model -->
+    <div class="modal fade" id="loginModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Login block</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="loginModelul">
+                        <li>
+                            <input type="text" class="form-control" placeholder="User Account ID" id="accountId">
+                        </li>
+                        <li>
+                            <input type="password" class="form-control" placeholder="Account Password"
+                                id="accountPassword">
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox"> Remember my credentials
+                        </li>
+                        <li id="errMsgBlock"></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#forgetPassModel">Forgot Password</button>
+                    <button type="button" class="btn btn-primary" onclick="readUserDetails()"
+                        value="submit">Login</button>
+                    <div id="success" style="color: red; display: none;">LOGIN SUCCESSFUL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sing Up Model -->
+    <div class="modal fade" id="SignUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign up Model</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="singUpmodelul">
+                        <li>
+                            <input type="text" class="form-control" placeholder="Enter User account Id"
+                                id="signUpaccountId">
+                            <p id="unameErr">User-Name can't be Empty</p>
+                        </li>
+                        <li>
+                            <input type="password" class="form-control" placeholder="Enter Account Password"
+                                id="signUpaccountPassword" onkeypress=" showrule()" onkeyup="checkValidation(event);" minlength="8" maxlength="8">
+                            <input type="checkbox" id="showPass" onchange="return showPassword(event)"> Show Password
+                            <p id="pwdEmpty">Password can't Empty</p>
+                            <div class="valid-list">
+                                <ol>
+                                    <li id="validlength">max and min lenght of pwd is 8</li>
+                                    <li id="capital">password should only starts with UpperCase</li>
+                                    <li id="specialChar">password have atleast on special character ^#@&</li>
+                                    <li id="validNo">password sholud have atleast one numeric value</li>
+                                    <li id="spaceValid">should not contain space</li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="password" class="form-control" placeholder="Re Enter Password"
+                                id="Re-accountPassword">
+                            <p id="pwdErr">password does not match</p>
+                        </li>
+                        <li>
+                            <input type="email" class="form-control" placeholder="Enter Your mail Id" id="Email">
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="registerUser()">SignUp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forget password -->
+
+    <div class="modal fade" id="forgetPassModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Forget Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li style="list-style: none;">
+                            <input type="Email" class="form-control" placeholder="Enter Mail id" id="mailId">
+                            <p id="mailErr">Email Cant be Empty !</p>
+                        </li>
+                    </ul>
+                    <p id="mailSent">We have Sent you the password resent Link please check your Mail...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-bs-target="#loginModel"
+                        data-bs-toggle="modal">Back to Login</button>
+                    <button type="button" class="btn btn-primary" onclick="forgotPassword()">Send Mail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-2">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 offset-1">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of whats new and exciting from us.</p>
+                            <div class="d-flex w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between py-4 my-4 border-top">
+                    <p>© 2021 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </footer>
+</body>
+
+</html>

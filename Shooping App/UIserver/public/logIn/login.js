@@ -9,7 +9,6 @@ var myfucn = () => {
    } 
    else {
     localStorage.setItem("userData",null);
-
    }
 }
 

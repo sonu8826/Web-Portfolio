@@ -1,0 +1,137 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#iconImg{
+  width: 100px;
+  height: 60px;
+  margin-right: 40px;
+}
+#NavBar {
+  background-color: #222E3E;
+  button {
+    margin-right: 10px !important;
+    padding: 0px 30px;
+  }
+}
+.nav-item a {
+   color: white;
+}
+#navItem a:hover {
+  background-color: yellow;
+  border-radius: 10px;
+}
+#navbarMenuitems li {
+  margin-right: 30px;
+}
+#cardsItems {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card img {
+  width: 200px;
+  height: 200px;
+  margin: 0px auto;
+}
+.card {
+  text-align: center;
+  margin: 10px 0px;
+}
+.card-box{
+  width: 25%;
+  height: 400px;
+  border: 2px solid rebeccapurple;
+}
+#MutliCards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+/* Module Styling Contents */
+#loginModelul li {
+  list-style: none;
+  margin: 20px 0px;
+}
+.modal-content{
+  background-color: #222E3E;
+  color: white;
+}
+#singUpmodelul li{
+  list-style: none;
+  margin: 20px 0px;
+}
+#mailSent{
+  text-align: center;
+  display: none;
+}
+#mailErr{
+  display: none;
+  text-align: center;
+}
+#unameErr{
+  display: none;
+  color: red;
+}
+#pwdErr{
+  display: none;
+  color: red;
+}
+#pwdEmpty {
+  display: none;
+  color: red;
+}
+.valid-list{
+  color: red;
+  display: none;
+}
+.set-color {
+  color: green;
+}
+.productDetailsPage {
+  display: grid;
+  grid-template-columns: 150px auto;
+  li {
+      list-style: none;
+  }
+}
+
+.productDetailsPage > div {
+  margin: 5px;
+}
+#productDetailsBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+#productDetailsBlock > .card {
+  margin: 10px;
+}
+currency {
+  position: relative;
+  top: -14px;
+}
+
+.discountPercent {
+  font-weight: bold;
+  color: orange;
+}
+
+.discountedPrice {
+  font-size: 35px;
+}
+
+.actualPrice {
+  text-decoration: underline;
+  text-decoration-line: line-through;
+}
+
+.productTitle {
+  height: 55px;
+}
+
+.productSmallDes {
+  height: 100px;
+}
