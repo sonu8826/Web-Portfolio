@@ -1,16 +1,18 @@
 <div class="productDetailsPage">
     <div>
-        Price Range: 
-        <input type="range"  min="100" max="100000">
-        Category:
-        <ul>
-            <li><input type="checkbox" value="Mens" id="category_men"> Mens</li>
-            <li></li><input type="checkbox" value="Womens" id="category_women"> Womens</li>
-            <li></li><input type="checkbox" value="Kids" id="category_kids"> Kids</li>
-            <li></li><input type="checkbox" value="Books" id="category_book"> Books</li>
-            <li></li><input type="checkbox" value="Electronics" id="category_Ele"> Electronics</li>
-        </ul>
-        <input type="button" value="Filter" class="btn btn-primary">
+        <p>Price Range :</p>
+        <span>100</span><input type="range" min="100" max="100000" step="300" onchange="updatePrice(this.value)"><span
+            id="staticPrice">100000</span>
+        <span id="priceRange"></span>
+            <p>Category:</p>
+            <ul>
+                <li><input type="checkbox" value="Mens" id="category_men"> Mens</li>
+                <li></li><input type="checkbox" value="Womens" id="category_women"> Womens</li>
+                <li></li><input type="checkbox" value="Kids" id="category_kids"> Kids</li>
+                <li></li><input type="checkbox" value="Books" id="category_book"> Books</li>
+                <li></li><input type="checkbox" value="Electronics" id="category_Ele"> Electronics</li>
+            </ul>
+            <input type="button" value="Filter" class="btn btn-primary">
     </div>
     <div id="productDetailsBlock"></div>
 </div>

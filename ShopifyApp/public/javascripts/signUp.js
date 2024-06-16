@@ -25,7 +25,10 @@ function registerUser() {
     var rpass = document.querySelector("#Re-accountPassword").value;
 
     if (pass == rpass) {
-        $('#loginModel').modal('show'); // problem here
+        // $('#SignUp').modal('hide');
+        // $('#loginModel').modal('show'); // problem here
+        window.open("./index.html","_self");
+        $('#loginModel').modal('show');
         return;
     } else {
         document.querySelector("#pwdErr").style.display = "block";

@@ -6,19 +6,25 @@
     <link rel="icon" type="image/x-icon" href="./images/fav-2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./library/bootstrap/dist/css/bootstrap.min.css">
+   
     <!-- <link rel="stylesheet" href="../"> -->
+    <link rel="stylesheet" href="./library/bootstrap/dist/css/bootstrap.min.css">
+
     <script src="./library/handelbar.js"></script>
     <script src="./library/axios.min.js"></script>
     <script src="./library/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./library/jQuery.js"></script>
+
+
     <link rel="stylesheet" href="./stylesheets/main.css">
+
     <script src="./javascripts/forgotPass.js"></script>
     <script src="./javascripts/signUp.js"></script>
     <script src="./javascripts/loginModal.js"></script>
-    <script src="./library/jQuery.js"></script>
     <script src="./javascripts/index.js"></script>
     <script src="./javascripts/loadProductDetails.js"></script>
-    
+    <script src="./javascripts/logout.js"></script>
+    <script src="./javascripts/productDetails.js"></script>
 
 </head>
 
@@ -52,10 +58,10 @@
                         <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-warning me-0" type="submit">Search</button>
                         <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-                            data-bs-target="#loginModel">Login</button>
+                            data-bs-target="#loginModel" id="loginBtn">Login</button>
                         <button class="btn btn-outline-primary" type="button" data-bs-target="#SignUp"
-                            data-bs-toggle="modal">SignUp</button>
-                        <i class="bi bi-cart4"></i>
+                        data-bs-toggle="modal" id="singupBtn">SignUp</button>
+                        <button class="btn btn-outline-danger" type="button" id="logoutBtn" data-bs-target="#logOutPopup" data-bs-toggle="modal">Logout</button>
                     </form>
                 </div>
             </div>
@@ -178,6 +184,26 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!--Model for Logout-->
+    <div class="modal fade" id="logOutPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Logout Session</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Do you want to logout from the session ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btnsColor2" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger btnsColor" onclick="logoutUser()">Logout</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>

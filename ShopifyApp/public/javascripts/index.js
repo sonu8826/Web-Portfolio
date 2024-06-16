@@ -2,15 +2,15 @@
 
 var loadSelectedPage = (pageType) => {
 
-    // if (pageType == 'homePage') {
-    //     $("#loginBtn").show();
-    //     $("#signupBtn").show();
-    //     $("#logoutBtn").hide();
-    // } else {
-    //     $("#loginBtn").hide();
-    //     $("#signupBtn").hide();
-    //     $("#logoutBtn").show();
-    // }
+    if (pageType == 'homePage') {
+        $("#loginBtn").show();
+        $("#singupBtn").show();
+        $("#logoutBtn").hide();
+    } else {
+        $("#loginBtn").hide();
+        $("#singupBtn").hide();
+        $("#logoutBtn").show();
+    }
     
     var templateUrl = ''; 
     switch (pageType) {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     modelInstance = new bootstrap.Modal('#loginModel', {});
-    // lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {});  
+    lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {});  
     loadSelectedPage('homePage');
 })
 
