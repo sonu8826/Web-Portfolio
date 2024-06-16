@@ -135,3 +135,7 @@ currency {
 .productSmallDes {
   height: 100px;
 }
+#SearchBox{
+  width: 20vw;
+}
+
