@@ -36,7 +36,6 @@ var validateUserCredentials = (userDetails) => {
             loadSelectedPage('productDetails');
         }
     }).catch((err) => {
-        
-    });;
-
+        console.log(err);
+    });
 }
