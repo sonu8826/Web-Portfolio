@@ -6,34 +6,49 @@ var showPassword = (event) => {
         document.querySelector("#signUpaccountPassword").setAttribute("type", "password");
     }
 }
+
+var userDetails = {}
 function registerUser() {
-    if (document.querySelector("#signUpaccountId").value == '') {
+    userDetails.userName = document.querySelector("#signUpaccountId").value;
+    userDetails.userPass = document.querySelector("#signUpaccountPassword").value;
+    userDetails.mailId = document.querySelector("#Email").value;
+    if (userDetails.userName == '') {
         document.querySelector("#unameErr").style.display = "block";
         return;
     }
     else {
         document.querySelector("#unameErr").style.display = "none";
     }
-    if (document.querySelector("#signUpaccountPassword").value == '') {
+    if (userDetails.userPass == '') {
         document.querySelector("#pwdEmpty").style.display = "block";
         return;
     }
     else {
         document.querySelector("#pwdEmpty").style.display = "none";
     }
-    var pass = document.querySelector("#signUpaccountPassword").value;
+    // userDetails.userPass = document.querySelector("#signUpaccountPassword").value;
     var rpass = document.querySelector("#Re-accountPassword").value;
 
-    if (pass == rpass) {
-        // $('#SignUp').modal('hide');
-        // $('#loginModel').modal('show'); // problem here
-        window.open("./index.html","_self");
-        $('#loginModel').modal('show');
-        return;
+    if (userDetails.userPass == rpass) {
+        // // $('#SignUp').modal('hide');
+        // // $('#loginModel').modal('show'); // problem here
+        // window.open("./index.html","_self");
+        // $('#loginModel').modal('show');
+        // return;
+        // alert("sending data to server...")
+        axios.post("/newUser/signup", userDetails).then((result)=>{
+            console.log(result);
+        }).catch((err)=>{
+            console.log(err);
+        });
+        var successMsg = document.querySelector("#msgRegisterSuccses");
+        successMsg.style.display = 'block';
+
     } else {
         document.querySelector("#pwdErr").style.display = "block";
     }
 }
+// console.log(userDetails);
 
 // Pasword validation :
 var showrule = () => {
@@ -84,5 +99,5 @@ var checkValidation = (event) => {
     else {
         document.querySelector("#spaceValid").setAttribute("class", "set-color");
     }
-    console.log(event);
+    // console.log(event);
 }

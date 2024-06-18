@@ -138,4 +138,9 @@ currency {
 #SearchBox{
   width: 20vw;
 }
+#msgRegisterSuccses{
+  text-align: center;
+  color: green;
+  display: none;
+}
 

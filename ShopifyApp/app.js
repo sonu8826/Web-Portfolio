@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var validateRouter = require('./routes/loginValidation');
+var validateRouter = require('./routes/LOGINvALIDATION'); // Doubt Here
 var productRouter = require("./routes/getProductDetails");
+var signupRouter = require('./routes/signupUserDetails')
 
 var app = express();
 
@@ -25,13 +26,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/validate/userCredentials", validateRouter);
 app.use("/load/productDetails", productRouter);
+app.use("/newUser/signup",signupRouter);
 
 app.listen(5000, function() {
   console.log("Server is running on port 5000");
 })
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404)); 
 });
 
 // error handler
