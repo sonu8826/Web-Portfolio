@@ -16,12 +16,13 @@ body {
     padding: 0px 30px;
   }
 }
-.nav-item a {
+#navItem a {
    color: white;
 }
 #navItem a:hover {
   background-color: yellow;
   border-radius: 10px;
+  color: black;
 }
 #navbarMenuitems li {
   margin-right: 30px;
