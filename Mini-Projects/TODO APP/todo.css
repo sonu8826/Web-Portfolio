@@ -1,0 +1,44 @@
+body{
+     background-color: rgb(4, 29, 29);
+}
+.container{
+    width: 360px;
+    height: 600px;
+    padding: 33px;
+    text-align: center;
+    background-color: rgb(13, 31, 31);
+    color: white;
+    margin-left: 33%;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+input{
+    width: 270px;
+    padding: 8px;
+    border-radius: 5px;
+    
+}
+button{
+    width: 90px;
+    height: 41px;
+    border-radius: 2px;
+}
+.text{
+    text-align: center;
+    font-size: 20px;
+}
+.text p{
+    background-color: white;
+    color: black;
+    width: 355px;
+    margin: 7px auto;
+    border-radius: 5px;
+    
+}
+.text p i{
+    float:  right;
+    cursor: pointer;
+}
+#flexCheckDefault{
+    float: left;
+}
