@@ -21,7 +21,7 @@ var priFillData = () =>  {
 }
 
 document.addEventListener("DOMContentLoaded", () => { 
-    if(localStorage.getItem("user Data")!= null){
+    if(localStorage.getItem("userData")!= null){
         // console.log("hello");
         priFillData();
         document.querySelector("#checkbox").checked = true;
