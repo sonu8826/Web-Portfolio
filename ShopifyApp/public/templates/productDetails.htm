@@ -1,18 +1,19 @@
 <div class="productDetailsPage">
     <div>
         <p>Price Range :</p>
-        <span>100</span><input type="range" min="100" max="100000" step="300" onchange="updatePrice(this.value)"><span
+        <span>100</span><input type="range" min="100" max="100000" step="300" onchange="updatePrice(this.value)" id="priceRange"><span
             id="staticPrice">100000</span>
         <span id="priceRange"></span>
             <p>Category:</p>
             <ul>
                 <li><input type="checkbox" value="Mens" id="category_men"> Mens</li>
-                <li></li><input type="checkbox" value="Womens" id="category_women"> Womens</li>
-                <li></li><input type="checkbox" value="Kids" id="category_kids"> Kids</li>
-                <li></li><input type="checkbox" value="Books" id="category_book"> Books</li>
-                <li></li><input type="checkbox" value="Electronics" id="category_Ele"> Electronics</li>
+                <li><input type="checkbox" value="Womens" id="category_women"> Womens</li>
+                <li><input type="checkbox" value="Kids" id="category_kids"> Kids</li>
+                <li><input type="checkbox" value="Books" id="category_book"> Books</li>
+                <li><input type="checkbox" value="Electronics" id="category_Ele"> Electronics</li>
+                <!-- <li><input type="checkbox" value="Electronics" id="category_toys"> Toys</li> -->
             </ul>
-            <input type="button" value="Filter" class="btn btn-primary">
+            <input type="button" value="Filter" class="btn btn-primary" onclick="applyFilter()">
     </div>
     <div id="productDetailsBlock"></div>
 </div>

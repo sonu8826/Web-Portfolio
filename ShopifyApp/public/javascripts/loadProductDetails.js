@@ -5,11 +5,11 @@ axios.get("templates/singleProductTemplate.htm").then((responseTemplate) => {
 }).catch((err) => {
         
 });
-var getProductDetails = () => {
-    
+var getProductDetails = (filterObj={}) => {
+    $("#productDetailsBlock").html("");
     var productDetails = [];
 
-    axios.get('/load/productDetails').then((response) => {
+    axios.get('/load/productDetails',{params:filterObj}).then((response) => {
         productDetails = response.data.pdata;
         productDetails.forEach((product, index) => {
             product.description = product.description.substr(0, 100) + '...';
@@ -22,5 +22,23 @@ var getProductDetails = () => {
 
 }
 
+var updatePrice = (value) => {
+    var static = document.querySelector("#staticPrice");
+    static.style.display = 'none';
+    var dynamic = document.querySelector("#priceRange");
+    dynamic.innerHTML = value;
+}
 
+var applyFilter  = () => {
+    var filterObj = {}
+    filterObj.priceRange = parseInt($("#priceRange").val());
+    filterObj.selectedCategory = [];
+   
+    var selectedCategorys = document.querySelectorAll("[id^=category_]:checked");
+    selectedCategorys.forEach((element)=>{
+       filterObj.selectedCategory.push(element.value); //
+    })
+    console.log(filterObj);
+    getProductDetails(filterObj)
+}
 
