@@ -1,6 +1,5 @@
 
-
-var loadSelectedPage = (pageType) => {
+var loadSelectedPage = (pageType, pid) => {
 
     if (pageType == 'homePage') {
         $("#loginBtn").show();
@@ -22,13 +21,21 @@ var loadSelectedPage = (pageType) => {
             // hide login and signup buttons and enable logout button
             templateUrl = 'templates/productDetails.htm';
             break;
+        case  'detailedPage':
+            templateUrl = 'templates/detailedProduct.htm';
+            break;
     }
 
     axios.get(templateUrl).then((templtResponse) => {
+        console.log("templateResponse :");
         console.log(templtResponse);
         $("main").html(templtResponse.data);
-        if (pageType == 'productDetails') {
-            getProductDetails(); // which loads the product details...
+        if (pageType == 'productDetails' || pageType == 'detailedPage') {
+            var data = {}
+            if(pid){
+                data.id = pid;
+            }
+            getProductDetails(data); // which loads the product details...
         }
 
         modelInstance.hide();

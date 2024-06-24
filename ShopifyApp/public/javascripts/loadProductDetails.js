@@ -27,6 +27,7 @@ var updatePrice = (value) => {
     static.style.display = 'none';
     var dynamic = document.querySelector("#priceRange");
     dynamic.innerHTML = value;
+    dynamic.style.display = "block";
 }
 
 var applyFilter  = () => {
@@ -36,9 +37,13 @@ var applyFilter  = () => {
    
     var selectedCategorys = document.querySelectorAll("[id^=category_]:checked");
     selectedCategorys.forEach((element)=>{
-       filterObj.selectedCategory.push(element.value); //
+       filterObj.selectedCategory.push(element.value.toLowerCase()); //
     })
     console.log(filterObj);
     getProductDetails(filterObj)
+}
+
+var viewDetailedProduct = (productId) => {
+    loadSelectedPage('detailedPage',productId);
 }
 

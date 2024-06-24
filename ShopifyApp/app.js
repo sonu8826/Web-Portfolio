@@ -8,7 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var validateRouter = require('./routes/LOGINvALIDATION'); // Doubt Here
 var productRouter = require("./routes/getProductDetails");
-var signupRouter = require('./routes/signupUserDetails')
+var signupRouter = require('./routes/signupUserDetails');
+var addNewProductRouter = require("./routes/addNewProduct");
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use("/validate/userCredentials", validateRouter);
 app.use("/load/productDetails", productRouter);
 app.use("/newUser/signup",signupRouter);
+app.use("/add/newProductDetails", addNewProductRouter);
 
 app.listen(5000, function() {
   console.log("Server is running on port 5000");

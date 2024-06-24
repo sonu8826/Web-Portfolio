@@ -13,10 +13,13 @@ router.get('/', function(req, res, next) {
                 $lt : parseInt(reqFilter.priceRange)
             }
         }
-        if(reqFilter.selectedCategory.length){
+        if(reqFilter.selectedCategory && reqFilter.selectedCategory.length){
             userFilterQuery.category = {
                 $in : reqFilter.selectedCategory
             }
+        }
+        if(reqFilter.id){
+            userFilterQuery.id = reqFilter.id;
         }
     }
     console.log("our query object");
