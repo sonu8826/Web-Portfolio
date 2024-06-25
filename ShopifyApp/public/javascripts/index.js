@@ -1,4 +1,5 @@
 
+
 var loadSelectedPage = (pageType, pid) => {
 
     if (pageType == 'homePage') {
@@ -48,7 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     modelInstance = new bootstrap.Modal('#loginModel', {});
-    lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {});  
-    loadSelectedPage('homePage');
+    lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {}); 
+    
+    axios.get("/check/userLogin").then((response) => {
+        if(response.data.isLoggedinUser){
+            loadSelectedPage('productDetails');
+        }
+        else {
+            loadSelectedPage('homePage');
+        }
+    })
+    // loadSelectedPage('homePage');
 })
 

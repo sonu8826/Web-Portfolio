@@ -17,7 +17,7 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid" id="NavBar">
-                    <img src="./images/logoforHomePage.png" alt="" id="iconImg" style="width: 50px; height: 50px;">
+                    <img src="./images/logoforHomePage.png" alt="" id="iconImg" style="width: 80px; height: 60px;">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarMenuitems">
                             <li class="nav-item" id="navItem">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item" id="navItem">
                                 <a class="nav-link" href="#">Feature</a>
@@ -43,7 +43,7 @@
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
                                 data-bs-target="#loginModel" id="loginBtn">Login</button>
                             <button class="btn btn-outline-primary" type="button" data-bs-target="#SignUp"
-                            data-bs-toggle="modal" id="singupBtn">SignUp</button>
+                            data-bs-toggle="modal" id="singupBtn">Become Seller</button>
                             <button class="btn btn-outline-danger" type="button" id="logoutBtn" data-bs-target="#logOutPopup" data-bs-toggle="modal">Logout</button>
                         </form>
                     </div>
@@ -52,13 +52,13 @@
         </header>
         <div class="container">
             <h3 class="title">
-                Add product details
+                ADD PRODUCT TO STORE
             </h3>
             <div class="row addProductDetails" >
                 <div class="col col-md-2"></div>
                 <div class="col col-md-8">
 
-                    <ul>
+                    <ul id="list-content">
                         <li>
                             <input class="form-control"  type="text" id="id" placeholder="Id">
                         </li>
@@ -76,7 +76,11 @@
                         </li>
                         <li>
                             <!-- <input class="form-control"  id="mainImage" type="text" placeholder="Image url"> -->
-                             Upload Product Image: <input type="file"> <input type="button" value="Upload Image">
+                             Upload Product Image: 
+                            <form method="POST" enctype="multipart/form-data">
+                                <input type="file" name="prodImage">
+                                <input type="button" value="Upload Image" onclick="uploadDetails()">
+                            </form>
                         <li>
                             <input class="form-control"  type="number" id="rating" placeholder="Rating">
                         </li>

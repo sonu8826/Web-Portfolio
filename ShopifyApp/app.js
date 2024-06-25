@@ -10,8 +10,20 @@ var validateRouter = require('./routes/LOGINvALIDATION'); // Doubt Here
 var productRouter = require("./routes/getProductDetails");
 var signupRouter = require('./routes/signupUserDetails');
 var addNewProductRouter = require("./routes/addNewProduct");
+var uploadImage = require("./routes/uploadImages");
+var session = require("express-session")
+var checkUserLoginRouter = require("./routes/isUserLoggedin")
+var logoutUser = require("./routes/logoutSession");
 
 var app = express();
+
+app.use(session({
+  secret: 'keyboard cat',
+  // resave: false,
+  // saveUninitialized: true,
+  // originalMaxAge:300000,
+  cookie: { secure: false }
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +41,10 @@ app.use("/validate/userCredentials", validateRouter);
 app.use("/load/productDetails", productRouter);
 app.use("/newUser/signup",signupRouter);
 app.use("/add/newProductDetails", addNewProductRouter);
+app.use("/add/product/image", uploadImage);
+app.use("/check/userLogin",checkUserLoginRouter);
+app.use("/logout/user",logoutUser);
+
 
 app.listen(5000, function() {
   console.log("Server is running on port 5000");

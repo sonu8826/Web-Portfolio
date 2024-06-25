@@ -23,14 +23,17 @@ router.post('/', function(req, res, next) {
 
       bcrypt.compare(req.body.accountPassword, result[0].accountPassword, function(err, result) {
         if (result) {
+            req.session.isLoggedinUser = true;
             responseObj = {msg: 'Valid details'};
         } else {
+          req.session.isLoggedinUser = false;
             responseObj = {msg: 'Invalid'};
         }
+        res.send(JSON.stringify(responseObj)); // Problem here showing invalid Credentials and my isUserLoggedIn value will always true dont know why;
     });
       // responseObj = {msg: 'Valid details'};
     }
-    res.send(JSON.stringify(responseObj));
+    
   })  
  
 

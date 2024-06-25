@@ -11,10 +11,12 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-session": "^1.18.0",
     "http-errors": "~1.6.3",
     "icons": "^1.0.0",
     "jade": "~1.11.0",
     "mongodb": "^6.7.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1"
   }
 }

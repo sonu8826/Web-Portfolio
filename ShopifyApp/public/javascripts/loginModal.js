@@ -19,14 +19,15 @@ var priFillData = () =>  {
     document.querySelector("#accountId").value = credentials.userName;
     document.querySelector("#accountPassword").value = credentials.userPass;
 }
+var lgooutModelInstance;
 
 document.addEventListener("DOMContentLoaded", () => { 
     if(localStorage.getItem("userData")!= null){
         // console.log("hello");
         priFillData();
-        document.querySelector("#checkbox").checked = true;
-       
+        document.querySelector("#checkbox").checked = true;  
     }
+    lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {}); // LOGOUT MODEL INSTANCE HERE :
 });
 
 var validateUserCredentials = (userDetails) => {
@@ -40,4 +41,11 @@ var validateUserCredentials = (userDetails) => {
     }).catch((err) => {
         console.log(err);
     });
+}
+
+var logoutUser = () => {
+    // window.open("./index.html","_self")
+    logoutModalInstance.hide() // not Hiding
+    loadSelectedPage('homePage');
+    axios.get('/logout/user').then(()=>{})
 }
