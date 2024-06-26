@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     resObj.isLoggedinUser = true;
   }
   else {
-    resObj.isLoggedinUser = true;
+    resObj.isLoggedinUser = false;
   }
   res.send(JSON.stringify(resObj));
 });

@@ -14,14 +14,14 @@ router.post('/', function(req, res, next) {
   console.log(req.body);
 
   mongoDbDetails.getConnectToCollection("validateAccountDetails","finduser",req.body).then((result)=>{
-    console.log("result");
+    console.log("Ye wala result");
     console.log(result);
     if(result.length == 0){
       responseObj = {msg: 'Invalid'}; // No data found :
     }
     else{
 
-      bcrypt.compare(req.body.accountPassword, result[0].accountPassword, function(err, result) {
+      bcrypt.compare(req.body.userPass, result[0].userPass, function(err, result) {
         if (result) {
             req.session.isLoggedinUser = true;
             responseObj = {msg: 'Valid details'};
