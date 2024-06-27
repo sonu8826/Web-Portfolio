@@ -1,5 +1,4 @@
 var createError = require('http-errors');
-var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -14,8 +13,22 @@ var uploadImage = require("./routes/uploadImages");
 var session = require("express-session")
 var checkUserLoginRouter = require("./routes/isUserLoggedin")
 var logoutUser = require("./routes/logoutSession");
-
+const { Socket } = require('dgram');
+var express = require('express');
 var app = express();
+const Server = require('http').createServer(app);
+const io = require('socket.io')(Server);
+
+
+io.on('connection', (socket) => {
+  total++;
+  console.log("*User Online");
+
+  socket.on('Disconected', function (){
+    console.log("user got disconnected");
+  })
+})
+
 
 app.use(session({
   secret: 'keyboard cat',

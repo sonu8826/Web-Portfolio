@@ -1,0 +1,20 @@
+.chatBox {
+    width: 25%;
+    height: 350px;
+    border: 2px solid gainsboro;
+   position: absolute;
+   top: 20%;
+   left: 40%;
+   border-radius: 5px;
+}
+#userMsg{
+    width: 70%;
+}
+#sendBtn{
+    width: 120px;
+}
+.btncontainer{
+    display: flex;
+    position: relative;
+    top: 89%;
+}

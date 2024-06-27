@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library/jQuery.js"></script>
+    <script src="../library/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../library/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <script type="module">
+        import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
+      
+        const socket = io();
+        
+        socket.emit("hello", "hello every one")
+        
+       
+    </script>
+    <div class="chatBox">
+        <div class="msgContainer"></div>
+        <div class="btncontainer">
+            <input type="text" id="userMsg" class="form-control">
+            <input type="button" value="Send" class="btn btn-primary" id="sendBtn">
+        </div>
+    </div>
+</body>
+</html>
