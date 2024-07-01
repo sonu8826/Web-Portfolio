@@ -5,6 +5,14 @@ axios.get("templates/singleProductTemplate.htm").then((responseTemplate) => {
 }).catch((err) => {
         
 });
+
+var detailedProduct;
+axios.get("templates/detailedProduct.htm").then((responseTemplate)=>{
+    detailedProduct = Handlebars.compile(responseTemplate.data);
+}).catch((err) =>{
+    console.log(err);
+})
+
 var getProductDetails = (filterObj={}) => {
     $("#productDetailsBlock").html("");
     var productDetails = [];

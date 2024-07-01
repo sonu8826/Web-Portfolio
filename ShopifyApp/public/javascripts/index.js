@@ -1,5 +1,4 @@
 
-
 var loadSelectedPage = (pageType, pid) => {
 
     if (pageType == 'homePage') {
@@ -25,20 +24,33 @@ var loadSelectedPage = (pageType, pid) => {
         case  'detailedPage':
             templateUrl = 'templates/detailedProduct.htm';
             break;
+        case 'addTocart':
+            templateUrl = 'templates/addToCart.htm';
+            break;
     }
 
+
     axios.get(templateUrl).then((templtResponse) => {
-        console.log("templateResponse :");
-        console.log(templtResponse);
-        $("main").html(templtResponse.data);
         if (pageType == 'productDetails' || pageType == 'detailedPage') {
-            var data = {}
-            if(pid){
+            if (pageType == 'detailedPage') {
+                // var productdata = {};
+                $("main").html(templtResponse.data);
+                axios.get('/load/productDetails', {params: {id: pid}}).then((response) => {
+                    var detaildTmplt = Handlebars.compile(templtResponse.data);
+                    $("main").html(detaildTmplt(response.data.pdata[0]));
+                });
+            } else {
+                $("main").html(templtResponse.data);
+            }
+            var data = {};
+            if (pid) {
                 data.id = pid;
+                // console.log(data);
             }
             getProductDetails(data); // which loads the product details...
+        } else {
+            $("main").html(templtResponse.data);
         }
-
         modelInstance.hide();
     })
 }   
@@ -46,8 +58,6 @@ var loadSelectedPage = (pageType, pid) => {
 var modelInstance; 
 var lgooutModelInstance;
 document.addEventListener("DOMContentLoaded", () => {
-
-
     modelInstance = new bootstrap.Modal('#loginModel', {});
     lgooutModelInstance = new bootstrap.Modal('#logOutPopup', {}); 
     
