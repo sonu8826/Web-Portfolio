@@ -162,12 +162,12 @@ var countryList = {
 
 const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 
-var selectOne = document.getElementById("#selectOne");
+var dropdownFirst = document.querySelector("#selectOne")
 
 for (code in countryList) {
     // console.log(code, countryList[code]);
     var newOption = document.createElement("option");
     newOption.innerText = code;
     newOption.value = code;
-    dropdownOne.append(newOption);
+    select.
 }
