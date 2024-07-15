@@ -3,7 +3,9 @@ const { data } = require('jquery');
 var router = express.Router();
 var multer = require("multer");
 
-const storage  = multer.diskStorage({
+var file_path;
+
+var storage  = multer.diskStorage({
     destination: function(req, file, callback) {
         callback(null, './public/images/productImage');
 },

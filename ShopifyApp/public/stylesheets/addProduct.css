@@ -36,3 +36,12 @@ ul li {
     padding: 10px;
     border-radius: 10px;
 }
+#navbarSupportedContent{
+    display: flex;
+    justify-content: right;
+}
+/* @media only screen and (max-width: 600px) {
+    #navbarSupportedContent {
+        display: none;
+    }
+  } */
