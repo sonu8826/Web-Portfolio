@@ -1,3 +1,5 @@
+
+
 var countryList = {
     AED: "AE",
     AFN: "AF",
@@ -162,12 +164,69 @@ var countryList = {
 
 const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 
-var dropdownFirst = document.querySelector("#selectOne")
-
-for (code in countryList) {
-    // console.log(code, countryList[code]);
-    var newOption = document.createElement("option");
-    newOption.innerText = code;
-    newOption.value = code;
-    select.
+var dropdowns = document.querySelectorAll(".dropdown select");
+var from = document.querySelector(".dropdown select");
+var to = document.querySelector("#to select");
+var toVlue;
+var fromValue;
+// console.log(countryList);
+for (let select of dropdowns) {
+    for (code in countryList) {
+        // console.log(code, countryList[code]);
+        var newOption = document.createElement("option");
+        newOption.innerText = code;
+        newOption.value = code;
+        if(select.name=== "from" && code ==="USD"){
+            newOption.selected = true;
+        }
+        if(select.name=== "to" && code ==="INR"){
+            newOption.selected = true;
+        }
+        select.appendChild(newOption);
+    }
+    select.addEventListener("change",(eve)=>{
+        updateFlag(eve.target)
+    })
 }
+
+const updateFlag =(element) => {
+    // console.log(element)
+    let currCode = element.value;
+    // console.log(currCode)
+    let countryCode = countryList[currCode];
+    // console.log(countryCode)
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+    let img = element.parentElement.querySelector("img");
+    img.src = newSrc;
+}
+
+ var getExchangeRate = async() => {
+    // alert("Listning");
+    var userValue = document.querySelector("#amount").value;
+    //  var URL = `${BASE_URL}/${from.value.toLowerCase()}/${to.value.toLowerCase()}.json`;
+    var URL = `https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_WMSq2gr3Fr0BHC6WTxWtQHvFqKg1Kt9okYVAqWVH&currencies`;
+
+    let response = await fetch(URL);
+    let data = await response.json();
+    for (let key in data){
+        // console.log(key, data[key])
+        for(let value in data[key]){
+        //   console.log(data[key][value])
+        // console.log(value);
+        if(value === to.value){
+            // console.log("to = "+data[key][value])
+            toVlue = data[key][value];
+            // document.querySelector("#Result").innerHTML = data[key][value] * userValue;
+        }
+        if(value === from.value){
+            // console.log( 'from = '+ data[key][value])
+            fromValue = data[key][value];
+        }
+        } 
+    }
+    var finalValue = fromValue * toVlue * userValue;
+    console.log(finalValue)
+    document.querySelector("#Result").innerHTML = finalValue;
+}
+
+// console.log(toVlue,fromValue)
