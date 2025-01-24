@@ -1,3 +1,1 @@
-# Web-Portfolio
-Here You can find all my project that i have done.
-Only for Desktop resolution yet.
+Welcome to my project portfolio! This repository showcases a collection of mini-projects and a full-stack project I have developed. Each project highlights my skills and growth in front-end, back-end, and full-stack development.
